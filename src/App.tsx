@@ -5,13 +5,14 @@ import { Header } from "./components/HeaderComponent";
 import { Body } from "./components/Body";
 import { Contact } from "./components/Contact";
 import { TechStack } from "./components/TechStack";
+import { Footer } from "./components/Footer";
+import { About } from "./components/About";
 
 const AppLayout = () => {
   return (
     <div className="px-40 py-12 bg-slate-900 min-h-screen text-white">
       <Header />
       <Outlet />
-      <Footer />
     </div>
   );
 };
@@ -21,18 +22,19 @@ const Home = () => {
   return (
     <div>
       <Body />
-      <TechStack />
+      <div className="text-center">
+        <TechStack />
+      </div>
+      <div className="text-center">
+        <About />
+      </div>
+      <Footer />
     </div>
   );
 };
 
 const Error = () => {
   return <div>404, Page not found</div>;
-};
-
-const Footer = () => {
-  // Add a Footer
-  return <div></div>;
 };
 
 const appRouter = createBrowserRouter([
@@ -46,7 +48,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <Body />,
+        element: <About />,
       },
       {
         path: "/techStack",
