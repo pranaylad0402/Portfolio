@@ -1,0 +1,33 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website of Pranay Lad.",
+  "main": "./src/App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest",
+    "watch-test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranaylad0402/Portfolio.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Pranay Lad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranaylad0402/Portfolio/issues"
+  },
+  "homepage": "https://github.com/pranaylad0402/Portfolio#readme",
+  "devDependencies": {
+    "parcel": "^2.10.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
