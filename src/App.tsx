@@ -1,11 +1,14 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Header } from "./components/header";
+import { Header } from "./components/HeaderComponent";
+import { Body } from "./components/Body";
+import { Contact } from "./components/Contact";
+import { TechStack } from "./components/TechStack";
 
 const AppLayout = () => {
   return (
-    <div className="px-40 py-12">
+    <div className="px-40 py-12 bg-slate-900 min-h-screen text-white">
       <Header />
       <Outlet />
       <Footer />
@@ -15,17 +18,12 @@ const AppLayout = () => {
 
 const Home = () => {
   // Add a Body
-  return <div></div>;
-};
-
-const About = () => {
-  // Add a About
-  return <div>This is About</div>;
-};
-
-const Contact = () => {
-  // Add a Contact
-  return <div>This is Contact</div>;
+  return (
+    <div>
+      <Body />
+      <TechStack />
+    </div>
+  );
 };
 
 const Error = () => {
@@ -48,7 +46,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: <Body />,
+      },
+      {
+        path: "/techStack",
+        element: <TechStack />,
       },
       {
         path: "/contact",
