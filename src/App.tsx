@@ -1,12 +1,18 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Header } from "./components/HeaderComponent";
+import {
+  Link,
+  Outlet,
+  RouterProvider,
+  createBrowserRouter,
+  useRouteError,
+} from "react-router-dom";
+import { About } from "./components/About";
 import { Body } from "./components/Body";
 import { Contact } from "./components/Contact";
-import { TechStack } from "./components/TechStack";
 import { Footer } from "./components/Footer";
-import { About } from "./components/About";
+import { Header } from "./components/HeaderComponent";
+import { TechStack } from "./components/TechStack";
 
 const AppLayout = () => {
   return (
@@ -18,7 +24,6 @@ const AppLayout = () => {
 };
 
 const Home = () => {
-  // Add a Body
   return (
     <div>
       <Body />
@@ -34,7 +39,31 @@ const Home = () => {
 };
 
 const Error = () => {
-  return <div>404, Page not found</div>;
+  const error = useRouteError();
+
+  return (
+    <>
+      <div className="flex justify-center items-center h-screen  bg-slate-900">
+        <div id="error-page">
+          <h1 className="lg:text-6xl font-bold text-2xl text-white">Oops!</h1>
+          <p className="text-xl text-white mt-4">
+            Sorry, an unexpected error has occurred.
+          </p>
+          <p className="text-3xl text-white mt-4">
+            {error.statusText || error.message}
+          </p>
+          <div className="mt-8">
+            <Link
+              to="/"
+              className="px-5 py-2 bg-white rounded-md hover:bg-green-400 "
+            >
+              Go to Home
+            </Link>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 const appRouter = createBrowserRouter([
