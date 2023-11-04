@@ -1,10 +1,11 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Header } from "./components/header";
 
 const AppLayout = () => {
   return (
-    <div>
+    <div className="px-40 py-12">
       <Header />
       <Outlet />
       <Footer />
@@ -12,14 +13,9 @@ const AppLayout = () => {
   );
 };
 
-const Header = () => {
-  // Add a header
-  return <div className="text-black font-bold text-2xl">This is Header</div>;
-};
-
-const Body = () => {
+const Home = () => {
   // Add a Body
-  return <div>This is Body</div>;
+  return <div></div>;
 };
 
 const About = () => {
@@ -38,7 +34,7 @@ const Error = () => {
 
 const Footer = () => {
   // Add a Footer
-  return <div>This is Footer</div>;
+  return <div></div>;
 };
 
 const appRouter = createBrowserRouter([
@@ -48,7 +44,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: <Home />,
       },
       {
         path: "/about",
