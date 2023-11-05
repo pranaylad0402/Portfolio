@@ -13,6 +13,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/HeaderComponent";
 import { TechStack } from "./components/TechStack";
+import { basename } from "path";
 
 const AppLayout = () => {
   return (
@@ -68,31 +69,34 @@ const Error = () => {
   );
 };
 
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <AppLayout />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/techStack",
-        element: <TechStack />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-    ],
-    errorElement: <Error />,
-  },
-]);
+const appRouter = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/techStack",
+          element: <TechStack />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+      ],
+      errorElement: <Error />,
+    },
+  ],
+  { basename: "/Portfolio" }
+);
 
 const root = createRoot(document.getElementById("root")!);
 root.render(<RouterProvider router={appRouter} />);
