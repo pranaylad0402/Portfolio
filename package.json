@@ -7,7 +7,6 @@
     "build": "parcel build index.html",
     "test": "jest",
     "watch-test": "jest --watch",
-    "prebuild": "shx rm -rf dist/*",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
