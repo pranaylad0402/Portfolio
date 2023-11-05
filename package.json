@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/pranaylad0402/Portfolio/issues"
   },
-  "homepage": "https://github.com/pranaylad0402/Portfolio#readme",
+  "homepage": "https://pranaylad0402.github.io/Portfolio",
   "devDependencies": {
     "gh-pages": "^6.0.0",
     "parcel": "^2.10.2",
