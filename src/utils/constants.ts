@@ -1,6 +1,6 @@
 export const navItems = {
   home: "Home",
-  heading: "< Pranay Lad />",
+  heading: "<Pranay Lad/>",
   about: "About",
   techStack: "Tech Stack",
   contact: "Contact",

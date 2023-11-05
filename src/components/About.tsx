@@ -2,10 +2,10 @@ import React from "react";
 import { images } from "../utils/constants";
 export const About = () => {
   return (
-    <div className="mt-32">
+    <div className="mt-16 sm:mt-32">
       <div>
-        <h1 className="text-4xl">About Me</h1>
-        <p className="text-lg mt-8 text-gray-400">
+        <h1 className="text-2xl sm:text-4xl">About Me</h1>
+        <p className="text-base sm-text-lg mt-8 text-gray-400">
           With a passion for innovation and a relentless drive for excellence, I
           am a seasoned Mobile App Developer specializing in React Native. With
           over 3.2 years of full-time and 1.5 years of part-time experience, I
@@ -27,24 +27,24 @@ export const About = () => {
         </p>
       </div>
       <div>
-        <h1 className="text-4xl mt-12">Work Experience</h1>
+        <h1 className="text-2xl sm:text-4xl mt-12">Work Experience</h1>
         <WorkExperienceItem
-          jobTitle={"Software Development Engineer - 2 (React Native)"}
-          companyName={"Mobile Premier League"}
+          jobTitle={"SDE - 2 (React Native)"}
+          companyName={"MPL"}
           location={"Bengaluru , India"}
           tenure={"Jul 2023 - Present"}
           jobType={"Full Time"}
         />
         <WorkExperienceItem
-          jobTitle={"Software Development Engineer - 1 (React Native)"}
-          companyName={"Mobile Premier League"}
+          jobTitle={"SDE - 1 (React Native)"}
+          companyName={"MPL"}
           location={"Bengaluru , India"}
           tenure={"Jan 2022 - Jul 2023"}
           jobType={"Full Time"}
         />
         <WorkExperienceItem
           jobTitle={"Software Engineer"}
-          companyName={"Pakkaprofile Psychometrics Pvt Ltd"}
+          companyName={"Pakkaprofile"}
           location={"Remote"}
           tenure={"Sep 2020 - Jan 2022"}
           jobType={"Full Time"}
@@ -80,29 +80,35 @@ const WorkExperienceItem = ({
 }) => {
   return (
     <div>
-      <div className="flex justify-between items-center mt-4">
-        <h1 className="text-2xl text-gray-200">{jobTitle}</h1>
-        <h1 className="text-lg text-black   bg-green-400 rounded-lg px-4 py-2">
+      <div className="flex justify-between items-center mt-2 sm:mt-4">
+        <h1 className="text-base sm:text-2xl text-gray-200">{jobTitle}</h1>
+        <h1 className="text-xs sm:text-lg text-black   bg-green-400 rounded-lg px-2 py-1 sm:px-4 sm:py-2">
           {jobType}
         </h1>
       </div>
       <div className="flex justify-between items-center mt-4">
         <div className="flex">
           <div className="flex items-center">
-            <img src={images.org} className="h-3 w-3" />
-            <h1 className="text-lg text-gray-400 ml-2">{companyName}</h1>
+            <img src={images.org} className="h-2 w-2 sm:h-3 sm:w-3" />
+            <h1 className="text-xs sm:text-lg text-gray-400 ml-1 sm:ml-2">
+              {companyName}
+            </h1>
           </div>
-          <div className="flex items-center ml-4">
-            <img src={images.location} className="h-3 w-3" />
-            <h1 className="text-lg text-gray-400 ml-2">{location}</h1>
+          <div className="flex items-center ml-1 sm:ml-4">
+            <img src={images.location} className="h-2 w-2 sm:h-3 sm:w-3" />
+            <h1 className="text-xs sm:text-lg text-gray-400 ml-1 sm:ml-2">
+              {location}
+            </h1>
           </div>
         </div>
         <div className="flex items-center">
-          <img src={images.org} className="h-3 w-3" />
-          <h1 className="text-lg text-gray-400 ml-2">{tenure}</h1>
+          <img src={images.org} className="h-2 w-2 sm:h-3 sm:w-3" />
+          <h1 className="text-xs sm:text-lg text-gray-400 ml-1 sm:ml-2">
+            {tenure}
+          </h1>
         </div>
       </div>
-      <div className="flex-grow border-t border-gray-800 mt-6" />
+      <div className="flex-grow border-t border-gray-800 my-4 sm:my-6" />
     </div>
   );
 };

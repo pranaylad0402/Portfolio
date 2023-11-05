@@ -16,9 +16,12 @@ import { TechStack } from "./components/TechStack";
 
 const AppLayout = () => {
   return (
-    <div className="px-40 py-12 bg-slate-900 min-h-screen text-white">
+    <div className="px-8 py-2 sm:px-40 sm:py-12 bg-slate-900  text-white min-h-screen flex-col">
       <Header />
       <Outlet />
+      <div className="block sm:hidden">
+        <Footer />
+      </div>
     </div>
   );
 };
@@ -33,7 +36,6 @@ const Home = () => {
       <div className="text-center">
         <About />
       </div>
-      <Footer />
     </div>
   );
 };
